@@ -233,6 +233,7 @@ header::before{
     background-color: #f2f2f2;
     padding: 20px;
     border-radius: 5px;
+    transition: .5s;
 }
 
 .skills h2 {
@@ -327,7 +328,10 @@ header::before{
         margin: 20px 0;
     }
     .articulo, .experience, .content-skills{
-         margin-top: 20px;
+         width: 90%;
+    }
+    .skills{
+        margin-bottom: 20px;
     }
     .content-skills{
         margin-bottom: 20px;
