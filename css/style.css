@@ -72,7 +72,6 @@ header::before{
  .hamburguer > i{
     font-size: 25px;
     line-height: 80px;
-    color: var(--color);
  }
 
  .titulospro{

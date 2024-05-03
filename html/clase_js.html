@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aprendiendo Js</title>
+</head>
+
+<body onload="load_page()">
+    <div class="container">
+        <div class="route">
+            <label for="name"> Name</label>
+            <input type="text" id="name" placeholder="ingrese su nombre ">
+        </div>
+        <div class="route">
+            <label for="last_name"> last_Name</label>
+            <input type="text" id="last_name" autocomplete="off" placeholder="ingrese su apellido">
+        </div>
+        <div class="button" id="send" onclick="send_form()">
+            <button> enviar </button>
+        </div>
+        <div  id="print"></div>
+       
+    </div>
+    <!-- <script>
+        alert("hola mundo") 
+    </script> -->
+    <script src="../js/funcionts.js"></script>
+    <script src="../js/sweetalert2@11.js"></script>
+    
+</body>
+</html>
