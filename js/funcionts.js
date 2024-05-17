@@ -45,18 +45,43 @@ function load_page(){
 
       document.getElementById("text").innerText= "el array a calcular es: "+ array_num;
       document.getElementById("impresion").value=  array_num;
+      document.getElementById("name_search").value= nombre_form;
+      
+      let hour_system= new Date();
+      let dia= hour_system.getDay();
+      console.log (hour_system.getDate());
+      console.log (hour_system.getDay());
+      console.log (hour_system.getFullYear());
+      console.log (hour_system.getHours());
+      console.log (hour_system.getMinutes());
+      console.log (hour_system.getMonth());
+      console.log(hour_system.getTime());
+       let month=["enero", "febrero", "marzo ", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+       let dias= [ "domingo", "lunes", "martes", "miercoles", "jueves", "viernes", "sabado"];
+       console.log (dias);
+       console.log(month);
+       for(let i=0; i < dias.length; i++){
+        console.log(dias [dia]);
+       }
+       let dia_mes = hour_system.getMonth()+1;
+       console.log(hour_system.getDate()+"/"+ dia_mes+"/"+ hour_system.getFullYear());
+
+      
+      document.getElementById("hour_system").value= hour_system;
 }
+
 
 function send_form(){
     let name =document.getElementById("name").value;
     let last_name =document.getElementById("last_name").value;
+    let pass_one =document.getElementById("pass_one").value;
+    let pass_two =document.getElementById("pass_two").value;
    
-    if(name.length == 0 || last_name.length==0){
+    if(name.length == 0 || last_name.length==0 || pass_one.length==0||pass_two.length==0){
         Swal.fire({
             icon: "error",
             title: "cajas de texto vacia ",
-            text: "alguna cja se encuentra vacia ",
-           
+            text: "alguna caja se encuentra vacia ",
           });
           if(name.length==0){
             document.getElementById("name").style.border="2px solid red";
@@ -69,9 +94,18 @@ function send_form(){
             document.getElementById("last_name").style.border="2px solid green";
           }
 
+          
+    }
+    else if(pass_one != pass_two){
+      Swal.fire({
+        icon: "error",
+        title: "sus contraseñas no son iguales  ",
+        text: "por favor valide sus credenciales",
+      });
     }
     else{
         document.getElementById("print").innerText= "su nombre es "+ name+ " "+ "y su apellido es " +last_name;
+        
     }
 }
 
@@ -156,6 +190,10 @@ function action(){
     console.log(array_add);
     console.log(array_numerico);
     document.getElementById("impresion").value=array_numerico;
+    if(isNaN(num)==true){
+      swal.fire("solo se aceptan numeros ")
+
+    }
   }
   function agregar_prim(){
     let num = document.getElementById("num").value;
@@ -173,4 +211,27 @@ function action(){
     document.getElementById("name").value="";
     document.getElementById("last_name").value="";
     document.getElementById("result").innerText="";
+  }
+  var nombre_form="Merly Tarazona Sepulveda";
+
+  function search(){
+  let nombre_buscar = document.getElementById("name_search").value;
+ // Swal.fire(nombre_buscar.toLowerCase());
+  //Swal.fire({
+    //text: nombre_buscar.toLowerCase(), //toUpperCase() mayus
+    //title: "Alguna de las cajas se encuentra vacia ",
+    //icon: "error",
+  //})
+ // let word=nombre_buscar.indexOf("e");
+// let word=nombre_buscar.subString(5,15);
+
+let word=nombre_buscar.split("");
+  swal.fire(word+"");
+  console.log(word);
+
+  let word_com = word.join("");
+  console.log(word_com)
+
+
+
   }
